@@ -21,5 +21,16 @@ export const Header = () => {
     </div>
   </header>
   `;
+
+  const navButton = headerElm.querySelector('.nav-btn');
+  const rolloutNav = headerElm.querySelector('.rollout-nav');
+  const menuItem = headerElm.querySelectorAll('a');
+  navButton.addEventListener(('click'), () => {
+    rolloutNav.classList.toggle('nav-closed');
+  });
+  menuItem.forEach(n => n.addEventListener(('click'), () => { 
+    rolloutNav.classList.toggle('nav-closed');
+  }
+  ));
   return headerElm;
 }
