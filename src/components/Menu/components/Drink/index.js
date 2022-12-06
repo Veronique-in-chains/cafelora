@@ -1,4 +1,5 @@
 import './style.css';
+import { Layer } from '../Layer/index.js';
 
 
 export const Drink = (props) => {
@@ -11,10 +12,6 @@ export const Drink = (props) => {
       </div>
       <div class="drink__info">
         <h3>${props.name}</h3>
-        <div class="layer">
-          <div class="layer__color" style="background-color: #613916"></div>
-          <div class="layer__label">espresso</div>
-        </div>
       </div>
     </div>
     <div class="drink__controls">
@@ -23,5 +20,11 @@ export const Drink = (props) => {
       </button>
     </div>
   `;
+  drinkElm.querySelector('.drink__info').append(Layer(
+    {
+      color: '#feeeca',
+      label: 'mléčná pěna',
+    }
+  ));
   return drinkElm;
 }
